@@ -17,4 +17,7 @@ func Save(){
 } catch{
 }
 }
+var automaticLogIn : [AutoLog] = []
+
+
 

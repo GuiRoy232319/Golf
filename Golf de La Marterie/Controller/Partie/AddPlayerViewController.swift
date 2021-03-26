@@ -31,6 +31,23 @@ class AddPlayerViewController: UIViewController {
         switchSetup()
         tableViewSetup()
         TableView.reloadData()
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardDidHideNotification, object: nil)
+        
+// Keyboard Up and Down:
+//        var isExpand: Bool = false
+//    @objc func keyboardUp(){
+//        if !isExpand{
+//            self.view.frame.origin.y = +300
+//            }
+//        }
+//    }
+//    @objc func keyboardDown(){
+//        if self.view.frame.origin.y != 0{
+//            self.view.frame.origin.y = 0
+//        }
+//    }
+//
     }
 // AllPlayer:
     func alljoueur(){

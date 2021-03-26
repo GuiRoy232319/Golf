@@ -12,10 +12,22 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        LogInViewController().getAutoLog()
+        if automaticLogIn != []{
+        let automactic = automaticLogIn[0]
+        if automactic.autoLogIn == true{
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let initialController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+            initialController.storyboard?.instantiateInitialViewController()
+            self.window?.rootViewController = initialController
+            self.window?.makeKeyAndVisible()
+        }
+        }
         return true
     }
 

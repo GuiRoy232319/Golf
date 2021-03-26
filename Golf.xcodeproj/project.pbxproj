@@ -193,6 +193,7 @@
 		AA3B7B8725FF5FC8006E513B /* Partie */ = {
 			isa = PBXGroup;
 			children = (
+				AA5B86322604AA880069DF21 /* testViewController.swift */,
 				AAD801F725CD5283007D54C7 /* ScoringViewController.swift */,
 				AAEAB87C25C035A90055C972 /* AddPlayerViewController.swift */,
 				AAEAB87725C0358A0055C972 /* NewPartieViewController.swift */,
@@ -308,7 +309,6 @@
 		AA569CDA25BECD6A00433D59 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AA5B86312604AA6C0069DF21 /* Test */,
 				AA3B7B8C25FF604F006E513B /* Profil */,
 				AA3B7B8B25FF6035006E513B /* Resa */,
 				AA3B7B8A25FF5FF2006E513B /* Course */,
@@ -322,6 +322,8 @@
 		AA569CE025BECD6A00433D59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA5B86362604AACA0069DF21 /* TestCollectionViewCell.swift */,
+				AA5B863A2604AF250069DF21 /* TestTableViewCell.swift */,
 				AA569CE125BECD6A00433D59 /* TableViewCell.swift */,
 				AA569CE225BECD6A00433D59 /* TrouTableViewCell.swift */,
 				AA569CE325BECD6A00433D59 /* indexPicker.swift */,
@@ -347,16 +349,6 @@
 				AAB22DED2600A3AA0010ABA2 /* Firebase Helper.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		AA5B86312604AA6C0069DF21 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				AA5B86322604AA880069DF21 /* testViewController.swift */,
-				AA5B86362604AACA0069DF21 /* TestCollectionViewCell.swift */,
-				AA5B863A2604AF250069DF21 /* TestTableViewCell.swift */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		CEE2E4D2C1DC331857809960 /* Frameworks */ = {

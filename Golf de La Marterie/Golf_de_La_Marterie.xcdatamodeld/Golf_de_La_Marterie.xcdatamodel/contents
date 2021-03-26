@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AutoLog" representedClassName="AutoLog" syncable="YES" codeGenerationType="class">
+        <attribute name="autoLogIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Joueurs" representedClassName="Joueurs" syncable="YES" codeGenerationType="class">
         <attribute name="coupsrecus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="depart" optional="YES" attributeType="String"/>
@@ -24,6 +27,7 @@
         <attribute name="prenom" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="AutoLog" positionX="-108" positionY="-216" width="128" height="44"/>
         <element name="Joueurs" positionX="-114.8052978515625" positionY="-300.8599853515625" width="128" height="194"/>
         <element name="LogIn" positionX="-117" positionY="-243" width="128" height="44"/>
         <element name="PartieJoueur" positionX="-108" positionY="-216" width="128" height="104"/>

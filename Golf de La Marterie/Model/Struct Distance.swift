@@ -106,3 +106,30 @@ var blanc = Dist_Depart(trou: from(.Blanc))
 var jaune = Dist_Depart(trou: from(.Jaune))
 var bleu = Dist_Depart(trou: from(.Bleu))
 var rouge = Dist_Depart(trou: from(.Rouge))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
