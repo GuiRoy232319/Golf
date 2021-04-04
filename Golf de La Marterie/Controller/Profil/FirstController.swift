@@ -22,7 +22,6 @@ class FirstController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     var entier = 0
     var decimal = 0.0
     
-    var Players: [Joueurs]?
     
     
     override func viewDidLoad() {
@@ -53,13 +52,6 @@ class FirstController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         if genderSwitch.isOn {
             gender.text = "Homme"
         } else { gender.text = "Femme"}
-    }
-// Get Player:
-    func getPlayer(){
-        do{
-            self.Players = try context.fetch(Joueurs.fetchRequest())
-        } catch{
-        }
     }
 //   Index Picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

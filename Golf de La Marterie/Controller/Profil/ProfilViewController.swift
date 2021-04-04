@@ -18,7 +18,6 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var DepartIv: UIImageView!
     @IBOutlet weak var userIV: RoundedImage!
     
-    var joueur: [Joueurs] = []
     var picker: UIImagePickerController = UIImagePickerController()
      
     override func viewDidLoad() {
@@ -47,14 +46,6 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(picker, animated: true, completion: nil)
         }
 
-    
-    func getPlayer(){
-        do{
-            self.joueur = try context.fetch(Joueurs.fetchRequest())
-        }catch{
-            }
-        }
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }

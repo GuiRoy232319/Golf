@@ -19,52 +19,35 @@ class AddPlayerViewController: UIViewController {
     @IBOutlet weak var genderSwitch: UISwitch!
     @IBOutlet weak var GenderLabel: UILabel!
     
-    var partie : [PartieJoueur]!
-    var AllJoueur : [Joueurs] = []
     var index : Double = 27.0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        alljoueur()
-        partieJoueur()
+//        getPlayer()
+        getPlayerPartie()
         switchSetup()
         tableViewSetup()
         TableView.reloadData()
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardDidHideNotification, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
 // Keyboard Up and Down:
-//        var isExpand: Bool = false
-//    @objc func keyboardUp(){
-//        if !isExpand{
-//            self.view.frame.origin.y = +300
-//            }
-//        }
-//    }
-//    @objc func keyboardDown(){
-//        if self.view.frame.origin.y != 0{
-//            self.view.frame.origin.y = 0
-//        }
-//    }
-//
-    }
-// AllPlayer:
-    func alljoueur(){
-        do{
-            self.AllJoueur = try context.fetch(Joueurs.fetchRequest())
-        } catch{
-            print("error")
+
+@objc func keyboardUp(){
+    if self.view.frame.origin.y == 0{
+        UIView.animate(withDuration: 0.5){
+            self.view.frame.origin.y = -300
+            }
+        }
+}
+@objc func keyboardDown(){
+        if self.view.frame.origin.y != 0{
+            UIView.animate(withDuration: 0.5){
+                self.view.frame.origin.y = 0
+            }
         }
     }
-    func partieJoueur(){
-        do{
-            self.partie = try context.fetch(PartieJoueur.fetchRequest())
-        } catch {
-            
-        }
-    }
-    
+
 // SetupView:
     func setupView(){
         NameTF.delegate = self
@@ -105,7 +88,7 @@ class AddPlayerViewController: UIViewController {
         let coupsrendus = Int64(coupRecus(slope: coul.slope, SSS: coul.SSS, index: newplayer.index , Par: 73))
             newplayer.coupsrecus = coupsrendus
         Save()
-        alljoueur()
+        getPlayer()
         TableView.reloadData()
         NameTF.text = ""
         SurnameTF.text = ""
@@ -127,14 +110,14 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AllJoueur.count
+        return joueur.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableView.dequeueReusableCell(withIdentifier: "joueur", for: indexPath) as! AllPlayerTableViewCell
-        cell.NamePlayer.text = AllJoueur[indexPath.row].name
-        cell.SurNamePlayer.text = AllJoueur[indexPath.row].surname
-        cell.IndexPlayer.text = "Index: \(AllJoueur[indexPath.row].index)"
-        cell.DepartIV.image = UIImage(named: "\(AllJoueur[indexPath.row].depart!)")
+        cell.NamePlayer.text = joueur[indexPath.row].name
+        cell.SurNamePlayer.text = joueur[indexPath.row].surname
+        cell.IndexPlayer.text = "Index: \(joueur[indexPath.row].index)"
+        cell.DepartIV.image = UIImage(named: "\(joueur[indexPath.row].depart!)")
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -144,7 +127,7 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource{
 //Ajouter un joueur:
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal, title: "Ajouter à la partie") {(action, view, completionHandler) in
-            let ajouterJoueur = self.AllJoueur[indexPath.row]
+            let ajouterJoueur = joueur[indexPath.row]
             let newplayer = PartieJoueur(context: context)
             newplayer.boule = ajouterJoueur.depart
             newplayer.coupsrendus = ajouterJoueur.coupsrecus
@@ -160,10 +143,10 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource{
 //    Supprimer un Joueur:
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Supprimer") { (action, view, completionHandler) in
-            let supprimer = self.AllJoueur[indexPath.row]
+            let supprimer = joueur[indexPath.row]
             context.delete(supprimer)
             Save()
-            self.alljoueur()
+            getPlayer()
             tableView.reloadData()
     }
       return UISwipeActionsConfiguration(actions: [action])

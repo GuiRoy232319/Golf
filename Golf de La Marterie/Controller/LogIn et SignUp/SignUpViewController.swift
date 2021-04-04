@@ -19,11 +19,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
-    var joueur : [Joueurs]!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPlayers()
+        getPlayer()
         errorLabel.alpha = 0.0
         nameTF.delegate = self
         familyNameTF.delegate = self
@@ -61,15 +61,6 @@ class SignUpViewController: UIViewController {
         view.window?.makeKeyAndVisible()
         view.window?.becomeKey()
     }
-// Obtenir le profil Joueur depuis CoreData:
-    func getPlayers(){
-        do{
-        self.joueur = try context.fetch(Joueurs.fetchRequest())
-    } catch{
-        print("error")
-    }
-}
-    
 //Inscription du joueur dans FireBase et UserID dans CoreData
     @IBAction func SignUpPressed(_ sender: Any) {
         let error = verif()
@@ -86,7 +77,7 @@ class SignUpViewController: UIViewController {
                 if err != nil {
                     self.showError("Error creating User")
                 } else {
-                    let player = self.joueur[0]
+                    let player = joueur[0]
                     player.ide = userID
                     Save()
                     dataBase.collection("Users").document(userID).setData(["Prénom": prenom, "nom": nom, "mail": mail, "identifiant": result!.user.uid]) { (error) in

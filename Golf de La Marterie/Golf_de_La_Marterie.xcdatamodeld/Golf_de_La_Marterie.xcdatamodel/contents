@@ -3,6 +3,10 @@
     <entity name="AutoLog" representedClassName="AutoLog" syncable="YES" codeGenerationType="class">
         <attribute name="autoLogIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
+    <entity name="Carte" representedClassName="Carte" syncable="YES" codeGenerationType="class">
+        <attribute name="carte" optional="YES" attributeType="Transformable" valueTransformerName="[Trou]"/>
+        <attribute name="key" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <entity name="Joueurs" representedClassName="Joueurs" syncable="YES" codeGenerationType="class">
         <attribute name="coupsrecus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="depart" optional="YES" attributeType="String"/>
@@ -31,5 +35,6 @@
         <element name="Joueurs" positionX="-114.8052978515625" positionY="-300.8599853515625" width="128" height="194"/>
         <element name="LogIn" positionX="-117" positionY="-243" width="128" height="44"/>
         <element name="PartieJoueur" positionX="-108" positionY="-216" width="128" height="104"/>
+        <element name="Carte" positionX="-99" positionY="-207" width="128" height="59"/>
     </elements>
 </model>

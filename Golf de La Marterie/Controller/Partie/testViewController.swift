@@ -10,25 +10,16 @@ import UIKit
 class testViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var partie : [PartieJoueur]!
+    let pickerView = ScoreToolbarPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        getPartiePlayer()
+        getPlayerPartie()
 
     }
-    
-// Get PartiePlayer()
-    func getPartiePlayer(){
-        do{
-            self.partie = try context.fetch(PartieJoueur.fetchRequest())
-        } catch {
-        }
-    }
-        
 // Prepare For Segue:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "holeDetail"{
@@ -60,9 +51,9 @@ extension testViewController: UITableViewDelegate, UITableViewDataSource {
        let view = UIView()
         view.backgroundColor = .clear
         let label = UILabel()
-        label.text = partie[section].prenom
+        label.text = "\(partie[section].prenom!) \(partie[section].nom!)"
         label.frame = CGRect(x: 0, y: 0, width: 150, height: 24)
-        label.textColor = .black
+        label.textColor = UIColor(cgColor: CGColor(genericCMYKCyan: 22, magenta: -23, yellow: 41, black: 9, alpha: 1))
         label.font = .boldSystemFont(ofSize: 18)
         view.addSubview(label)
         return view
@@ -95,7 +86,58 @@ extension testViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension testViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
+//        code enregistrement du score
+
         return true
     }
 }
+////ToolBarDelegate
+//extension testViewController: ScoreToolBarPickerViewDelegate{
+//    func didTapSave() {
+//        <#code#>
+//    }
+//
+//    func didTapCancel() {
+//        <#code#>
+//    }
+//
+//    func didSelect(_ pickerView: UIPickerView, didSelectItemAtIndexPath: IndexPath) {
+//        <#code#>
+//    }
+//}
+//// PickerView Delegate & DataSource
+//extension testViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        <#code#>
+//    }
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        <#code#>
+//    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        <#code#>
+//    }
+//
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

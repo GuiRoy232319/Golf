@@ -25,93 +25,31 @@ class ScoringViewController: UIViewController {
     var putts : String = ""
     var coups : String = ""
     var fairway : String = ""
-    var Player: [PartieJoueur]!
+
     
     var manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getPlayer()
-//        getCarte()
+        getPlayerPartie()
+
         let dat = Date()
-        let jour = DateConvertir(date: dat)
+        let jour = dateConvertir(date: dat)
         date.text = "le \(jour)"
         trouLabel.text = "Trou N°\(trou.numTrou)"
         coupsRendu.text = "HCP: \(trou.HCP)"
         hcpLabel.text = "Par: \(trou.parTrou)"
-        let monjoueur = Player[0]
+        let monjoueur = partie[0]
         NameLabel.text = monjoueur.prenom
         SurnameLabel.text = monjoueur.nom
         setupManager()
-        
-        
     }
-// Bouton Coups, Fairway & Putts:
-//    @IBAction func coupsCount(_ sender: Any) {
-//        let coups = Int(coupsStepper.value)
-//        coupsTF.text = "\(coups)"
-//        if coups > trou.parTrou {
-//            coupsTF.textColor = .systemRed
-//        }
-//        if coups == trou.parTrou{
-//            coupsTF.textColor = .systemBlue
-//        }
-//        if coups < trou.parTrou {
-//            coupsTF.textColor = .systemGreen
-//        }
-//    }
-//    @IBAction func puttsCount(_ sender: Any) {
-//        let putts = Int(puttsStepper.value)
-//        puttsTF.text = "\(putts)"
-//        if putts > 2 {
-//            puttsTF.textColor = .systemRed
-//        }
-//        if putts <= 2 {
-//            puttsTF.textColor = .systemGreen
-//        }
-//    }
-//    @IBAction func fairwayTouch(_ sender: Any) {
-//        if fairwaySwitch.isOn == true{
-//            fairwayLabel.text = "Oui"
-//            fairwayLabel.textColor = .systemGreen
-//        } else {
-//            fairwayLabel.text = "Non"
-//            fairwayLabel.textColor = .black
-//        }
-//    }
-//
-// GetCarte:
-    func getPlayer(){
-        do{
-            self.Player = try context.fetch(PartieJoueur.fetchRequest())
-        } catch{
-            }
-        }
-        
-//Fonctions:
-    func DateConvertir(date: Date) -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "fr_FR")
-        return dateFormatter.string(from: date)
-    }
+      
+
     
 //Validation & Sauvegarde:
     @IBAction func ValidationAndSave(_ sender: Any) {
-//        let carteUpdate = Carte(context: context)
-//        carteUpdate.coups = Int64(coupsStepper.value)
-//        carteUpdate.putts = Int64(puttsStepper.value)
-//        carteUpdate.fairway = fairwayLabel.text
-//        carteUpdate.prenom = NameLabel.text
-//        carteUpdate.nom = SurnameLabel.text
-//        carteUpdate.trou = Int64(trou.numTrou)
-//
-//        Save()
-//        getCarte()
-//        print(Carte.self)
-//        print(Score.count)
         dismiss(animated: true, completion: nil)
     }
 }
@@ -160,9 +98,4 @@ extension ScoringViewController: CLLocationManagerDelegate{
             }
         }
     }
-//extension ScoringViewController: UITextFieldDelegate{
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        view.endEditing(true)
-//        return true
-//    }
-//}
+

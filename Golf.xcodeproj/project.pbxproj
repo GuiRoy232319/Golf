@@ -40,6 +40,9 @@
 		AA5B86372604AACA0069DF21 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B86362604AACA0069DF21 /* TestCollectionViewCell.swift */; };
 		AA5B863B2604AF250069DF21 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B863A2604AF250069DF21 /* TestTableViewCell.swift */; };
 		AA5B863F260890740069DF21 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B863E260890740069DF21 /* RoundedImage.swift */; };
+		AA6D341C2611E87000A1AFD2 /* Partie & Trou.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D341B2611E87000A1AFD2 /* Partie & Trou.swift */; };
+		AA6D3420261312C800A1AFD2 /* ScorePickerViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D341F261312C800A1AFD2 /* ScorePickerViewToolbar.swift */; };
+		AA6D34242613248400A1AFD2 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D34232613248400A1AFD2 /* DateFormatter.swift */; };
 		AAB22DEE2600A3AB0010ABA2 /* Firebase Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB22DED2600A3AA0010ABA2 /* Firebase Helper.swift */; };
 		AAB22DF426034FF10010ABA2 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB22DF326034FF10010ABA2 /* BeginViewController.swift */; };
 		AAB22DF826035C710010ABA2 /* ProfilLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB22DF726035C710010ABA2 /* ProfilLogInViewController.swift */; };
@@ -131,6 +134,9 @@
 		AA5B86362604AACA0069DF21 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5B863A2604AF250069DF21 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		AA5B863E260890740069DF21 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		AA6D341B2611E87000A1AFD2 /* Partie & Trou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partie & Trou.swift"; sourceTree = "<group>"; };
+		AA6D341F261312C800A1AFD2 /* ScorePickerViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePickerViewToolbar.swift; sourceTree = "<group>"; };
+		AA6D34232613248400A1AFD2 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		AAB22DED2600A3AA0010ABA2 /* Firebase Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase Helper.swift"; sourceTree = "<group>"; };
 		AAB22DF326034FF10010ABA2 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		AAB22DF726035C710010ABA2 /* ProfilLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilLogInViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +328,7 @@
 		AA569CE025BECD6A00433D59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA6D341F261312C800A1AFD2 /* ScorePickerViewToolbar.swift */,
 				AA5B86362604AACA0069DF21 /* TestCollectionViewCell.swift */,
 				AA5B863A2604AF250069DF21 /* TestTableViewCell.swift */,
 				AA569CE125BECD6A00433D59 /* TableViewCell.swift */,
@@ -347,6 +354,8 @@
 				AAEAB87225C00D970055C972 /* CoreDataHelper.swift */,
 				AAD801FC25D12CC4007D54C7 /* DonnéesGPS.swift */,
 				AAB22DED2600A3AA0010ABA2 /* Firebase Helper.swift */,
+				AA6D341B2611E87000A1AFD2 /* Partie & Trou.swift */,
+				AA6D34232613248400A1AFD2 /* DateFormatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -604,6 +613,7 @@
 				AA569CEF25BECD6A00433D59 /* FirstController.swift in Sources */,
 				AAEAB88725C167200055C972 /* ModeDeJeuPickerView.swift in Sources */,
 				AA569CF725BECD6A00433D59 /* StructPlayer.swift in Sources */,
+				AA6D341C2611E87000A1AFD2 /* Partie & Trou.swift in Sources */,
 				AAD801FD25D12CC5007D54C7 /* DonnéesGPS.swift in Sources */,
 				AAB22DF826035C710010ABA2 /* ProfilLogInViewController.swift in Sources */,
 				AA569CEE25BECD6A00433D59 /* ProfilViewController.swift in Sources */,
@@ -619,10 +629,12 @@
 				AA3B7B8425FF5B4A006E513B /* RoundedButton.swift in Sources */,
 				AAD801F825CD5283007D54C7 /* ScoringViewController.swift in Sources */,
 				AA569C9925BEB99B00433D59 /* AppDelegate.swift in Sources */,
+				AA6D3420261312C800A1AFD2 /* ScorePickerViewToolbar.swift in Sources */,
 				AA569CF025BECD6A00433D59 /* TableViewCell.swift in Sources */,
 				AAE76C0C25C965590035868D /* ToolBarPickerView.swift in Sources */,
 				AA569CF125BECD6A00433D59 /* TrouTableViewCell.swift in Sources */,
 				AAEAB87825C0358A0055C972 /* NewPartieViewController.swift in Sources */,
+				AA6D34242613248400A1AFD2 /* DateFormatter.swift in Sources */,
 				AAD801EE25CAAA98007D54C7 /* SavedPartieViewController.swift in Sources */,
 				AA569CEB25BECD6A00433D59 /* HoleViewController.swift in Sources */,
 				AA3B7B9025FF650F006E513B /* LogInViewController.swift in Sources */,

@@ -19,8 +19,6 @@ class NewPartieViewController: UIViewController{
     @IBOutlet weak var Competition: UISwitch!
     @IBOutlet weak var signature: UISwitch!
     
-    var partie : [PartieJoueur]!
-    var joueurs : [Joueurs]!
     let mode : [String] = ["StrokePlay", "Stableford","MatchPlay", "Scramble","Foursome","Greensome","Chapman", "Course à la Ficelle"]
     
     var formule : String!
@@ -28,10 +26,11 @@ class NewPartieViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        parti()
-        JoueurPartie()
+        getPlayer()
+        getPlayerPartie()
         setupjoueur()
         ReloadData()
+        formule = modePicker.mode[0]
     }
 //SetupView:
     func setupView(){
@@ -46,26 +45,15 @@ class NewPartieViewController: UIViewController{
     
 // Refresh:
     @IBAction func refresh(_ sender: Any) {
-        JoueurPartie()
+        getPlayerPartie()
         TB.reloadData()
     }
     
 // GetPlayer & setup Joueurs TB & ReloadData:
-    func parti(){
-        do{
-            self.joueurs = try context.fetch(Joueurs.fetchRequest())
-        } catch {
-        }
-    }
-    func JoueurPartie(){
-        do{
-            self.partie = try context.fetch(PartieJoueur.fetchRequest())
-        } catch {
-        }
-    }
+
     func setupjoueur(){
-        if joueurs == [] {
-        let monjoueur = joueurs[0]
+        if joueur == [] {
+        let monjoueur = joueur[0]
             let newplayer = PartieJoueur(context: context)
             newplayer.index = monjoueur.index
             newplayer.prenom = monjoueur.name
@@ -76,7 +64,7 @@ class NewPartieViewController: UIViewController{
                 try context.save()
             } catch {
             }
-            JoueurPartie()
+            getPlayerPartie()
             TB.reloadData()
         }
     }
@@ -126,13 +114,13 @@ extension NewPartieViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Supprimer") { (action, view, completionHandler) in
-            let supprimer = self.partie[indexPath.row]
+            let supprimer = partie[indexPath.row]
             context.delete(supprimer)
             do {
                 try context.save()
             } catch {
             }
-            self.JoueurPartie()
+            getPlayerPartie()
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [action])
