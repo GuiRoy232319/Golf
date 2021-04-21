@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class testViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let pickerView = ScoreToolbarPickerView()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +70,9 @@ extension testViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Trou", for: indexPath) as! TestCollectionViewCell
-    cell.setupTextFieldDelegate(self, forRow: indexPath.row)
     cell.trouLabel.text = "Trou N°\(LaMarterie[indexPath.row].numTrou)"
     cell.parLabel.text = "Par \(LaMarterie[indexPath.row].parTrou)"
     cell.hcpLabel.text = "Hcp: \(LaMarterie[indexPath.row].HCP)"
-    cell.scoreTF.delegate = self
     cell.scoreLabel.alpha = 0.0
         return cell
     }
@@ -86,39 +85,14 @@ extension testViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension testViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
-//        code enregistrement du score
 
         return true
     }
 }
-////ToolBarDelegate
-//extension testViewController: ScoreToolBarPickerViewDelegate{
-//    func didTapSave() {
-//        <#code#>
-//    }
-//
-//    func didTapCancel() {
-//        <#code#>
-//    }
-//
-//    func didSelect(_ pickerView: UIPickerView, didSelectItemAtIndexPath: IndexPath) {
-//        <#code#>
-//    }
-//}
-//// PickerView Delegate & DataSource
-//extension testViewController: UIPickerViewDelegate, UIPickerViewDataSource{
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        <#code#>
-//    }
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        <#code#>
-//    }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        <#code#>
-//    }
-//
+
+
     
-}
+ 
 
 
 

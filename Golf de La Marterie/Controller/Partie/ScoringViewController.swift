@@ -8,9 +8,17 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RxSwift
+import RxCocoa
+
 
 class ScoringViewController: UIViewController {
     
+    @IBOutlet weak var girLabel: UILabel!
+    @IBOutlet weak var puttStepper: UIStepper!
+    @IBOutlet weak var puttsLabel: UILabel!
+    @IBOutlet weak var scoreStepper: UIStepper!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var trouLabel: UILabel!
     @IBOutlet weak var hcpLabel: UILabel!
@@ -22,8 +30,8 @@ class ScoringViewController: UIViewController {
     @IBOutlet weak var Parcours: MKMapView!
     
     var trou : Parcours!
-    var putts : String = ""
-    var coups : String = ""
+    var putts : Int64 = 0
+//    private let coupsVariable = Varia 
     var fairway : String = ""
 
     

@@ -11,6 +11,9 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'RxSwift'
+pod 'RxCocoa'
+
   # Pods for Golf de La Marterie
 
   target 'Golf de La MarterieTests' do

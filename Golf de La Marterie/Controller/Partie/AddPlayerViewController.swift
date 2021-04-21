@@ -32,14 +32,13 @@ class AddPlayerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
 // Keyboard Up and Down:
-
 @objc func keyboardUp(){
     if self.view.frame.origin.y == 0{
         UIView.animate(withDuration: 0.5){
             self.view.frame.origin.y = -300
             }
         }
-}
+    }
 @objc func keyboardDown(){
         if self.view.frame.origin.y != 0{
             UIView.animate(withDuration: 0.5){

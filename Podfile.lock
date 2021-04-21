@@ -337,6 +337,12 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
   - youtube-ios-player-helper (1.0.3)
 
 DEPENDENCIES:
@@ -345,6 +351,8 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - FSCalendar
+  - RxCocoa
+  - RxSwift
   - youtube-ios-player-helper
 
 SPEC REPOS:
@@ -369,6 +377,9 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
@@ -392,8 +403,11 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
 
-PODFILE CHECKSUM: 16a93d65a7ba87a7b057bc8d170db534dcdcc828
+PODFILE CHECKSUM: ee5b99c025cf68550fbc51f9420c83ef92b8cb6c
 
 COCOAPODS: 1.10.1
