@@ -17,6 +17,7 @@
 		AA3B7B9425FF6533006E513B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3B7B9325FF6533006E513B /* SignUpViewController.swift */; };
 		AA3B7B9825FF7539006E513B /* homeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3B7B9725FF7538006E513B /* homeController.swift */; };
 		AA420C8D25FF576D0090D130 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA420C8C25FF576D0090D130 /* GoogleService-Info.plist */; };
+		AA4D6CA827830D89004B9F1A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6CA727830D89004B9F1A /* Functions.swift */; };
 		AA569C9925BEB99B00433D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569C9825BEB99B00433D59 /* AppDelegate.swift */; };
 		AA569C9B25BEB99B00433D59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569C9A25BEB99B00433D59 /* SceneDelegate.swift */; };
 		AA569C9D25BEB99B00433D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569C9C25BEB99B00433D59 /* ViewController.swift */; };
@@ -104,6 +105,7 @@
 		AA3B7B9325FF6533006E513B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AA3B7B9725FF7538006E513B /* homeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeController.swift; sourceTree = "<group>"; };
 		AA420C8C25FF576D0090D130 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA4D6CA727830D89004B9F1A /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AA569C9525BEB99B00433D59 /* Golf de La Marterie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golf de La Marterie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA569C9825BEB99B00433D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA569C9A25BEB99B00433D59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -336,8 +338,6 @@
 				AA0ADD1325C2AEA00086F8F3 /* AllPlayerTableViewCell.swift */,
 				AAE76C0B25C965590035868D /* ToolBarPickerView.swift */,
 				AAD8024B25D292D7007D54C7 /* MesPartiesViewCell.swift */,
-				AA3B7B8325FF5B4A006E513B /* RoundedButton.swift */,
-				AA5B863E260890740069DF21 /* RoundedImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +353,9 @@
 				AAB22DED2600A3AA0010ABA2 /* Firebase Helper.swift */,
 				AA6D341B2611E87000A1AFD2 /* Partie & Trou.swift */,
 				AA6D34232613248400A1AFD2 /* DateFormatter.swift */,
+				AA4D6CA727830D89004B9F1A /* Functions.swift */,
+				AA3B7B8325FF5B4A006E513B /* RoundedButton.swift */,
+				AA5B863E260890740069DF21 /* RoundedImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				AA569CEF25BECD6A00433D59 /* FirstController.swift in Sources */,
 				AAEAB88725C167200055C972 /* ModeDeJeuPickerView.swift in Sources */,
 				AA569CF725BECD6A00433D59 /* StructPlayer.swift in Sources */,
+				AA4D6CA827830D89004B9F1A /* Functions.swift in Sources */,
 				AA6D341C2611E87000A1AFD2 /* Partie & Trou.swift in Sources */,
 				AAD801FD25D12CC5007D54C7 /* DonnéesGPS.swift in Sources */,
 				AAB22DF826035C710010ABA2 /* ProfilLogInViewController.swift in Sources */,
@@ -751,7 +755,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -806,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

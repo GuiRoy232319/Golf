@@ -15,10 +15,9 @@ struct boule {
 }
 var slope : Int = 0
 var SSS : Float = 0.0
-
+var coupsRecus : Int = 0
 
 func coupRecus(slope: Int64, SSS: Float, index: Double, Par: Int) -> Int{
-        var coupsRecus : Int
         let first = (index * Double(slope)) / 113
         let second =  (SSS - Float(Par))
         coupsRecus = Int(first) + Int(second)

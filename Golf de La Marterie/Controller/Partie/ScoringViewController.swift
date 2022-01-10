@@ -8,8 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-import RxSwift
-import RxCocoa
+
 
 
 class ScoringViewController: UIViewController {
